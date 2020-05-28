@@ -1,0 +1,5 @@
+coverage
+mock
+nose2
+six
+unittest-xml-reporting
