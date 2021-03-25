@@ -29,7 +29,7 @@ pipeline {
                 success {
                     // build source and binary wheels
                     sh 'python3 setup.py sdist bdist_wheel'
-                    // Push these somewhere if you want...
+                    // Push these somewhere if you want...like Pypi
                 }
                 cleanup {
                     cleanWs()

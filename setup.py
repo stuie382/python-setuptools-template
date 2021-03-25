@@ -6,4 +6,4 @@ ensuring that all required dependencies are present.
 import setuptools
 
 
-setuptools.setup(setup_requires=['pbr'], pbr=True)
+setuptools.setup()
