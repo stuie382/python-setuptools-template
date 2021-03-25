@@ -1,10 +1,11 @@
 
-# Created by https://www.gitignore.io/api/c,git,c++,svn,java,linux,cmake,maven,gradle,csharp,python,android,windows,java-web,notepadpp,sublimetext,pycharm+all,visualstudio,jetbrains+all,androidstudio,microsoftoffice,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=c,git,c++,svn,java,linux,cmake,maven,gradle,csharp,python,android,windows,java-web,notepadpp,sublimetext,pycharm+all,visualstudio,jetbrains+all,androidstudio,microsoftoffice,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/c,svn,git,c++,java,maven,linux,cmake,python,csharp,gradle,windows,android,java-web,notepadpp,pycharm+all,sublimetext,visualstudio,androidstudio,jetbrains+all,microsoftoffice,visualstudiocode,cfwheels,virtualenv
+# Edit at https://www.toptal.com/developers/gitignore?templates=c,svn,git,c++,java,maven,linux,cmake,python,csharp,gradle,windows,android,java-web,notepadpp,pycharm+all,sublimetext,visualstudio,androidstudio,jetbrains+all,microsoftoffice,visualstudiocode,cfwheels,virtualenv
 
 ### Android ###
 # Built application files
 *.apk
+*.aar
 *.ap_
 *.aab
 
@@ -18,7 +19,8 @@
 bin/
 gen/
 out/
-release/
+#  Uncomment the following line in case you need and you don't have the release build type files in your app
+# release/
 
 # Gradle files
 .gradle/
@@ -60,6 +62,7 @@ captures/
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
+.cxx/
 
 # Google Services (e.g. APIs or Firebase)
 # google-services.json
@@ -92,7 +95,6 @@ output.json
 
 # Replacement of .externalNativeBuild directories introduced
 # with Android Studio 3.5.
-.cxx/
 
 ### Linux ###
 *~
@@ -171,6 +173,10 @@ dkms.conf
 
 # Precompiled Headers
 
+# Linker files
+
+# Debugger Files
+
 # Compiled Dynamic libraries
 
 # Fortran module files
@@ -181,6 +187,20 @@ dkms.conf
 *.lai
 
 # Executables
+
+### CFWheels ###
+# unpacked plugin folders
+plugins/**/*
+
+# files directory where uploads go
+files
+
+# DBMigrate plugin: generated SQL
+db/sql
+
+# AssetBundler plugin: generated bundles
+javascripts/bundles
+stylesheets/bundles
 
 ### CMake ###
 CMakeLists.txt.user
@@ -194,6 +214,7 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+CMakeUserPresets.json
 
 ### CMake Patch ###
 # External projects
@@ -225,12 +246,14 @@ mono_crash.*
 [Rr]eleases/
 x64/
 x86/
+[Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -262,6 +285,9 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
 # StyleCop
 StyleCopReport.xml
 
@@ -269,6 +295,7 @@ StyleCopReport.xml
 *_i.c
 *_p.c
 *_h.h
+*.meta
 *.iobj
 *.ipdb
 *.pgc
@@ -322,9 +349,6 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
-# JustCode is a .NET coding add-in
-.JustCode
-
 # TeamCity is a build add-in
 _TeamCity*
 
@@ -334,6 +358,9 @@ _TeamCity*
 # AxoCover is a Code Coverage Tool
 .axoCover/*
 !.axoCover/settings.json
+
+# Coverlet is a free, cross platform Code Coverage Tool
+coverage*[.json, .xml, .info]
 
 # Visual Studio code coverage results
 *.coverage
@@ -543,6 +570,12 @@ healthchecksdb
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
+# Ionide (cross platform F# VS Code tools) working folder
+.ionide/
+
+# Fody - auto-generated XML schema
+FodyWeavers.xsd
+
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
@@ -586,7 +619,7 @@ hs_err_pid*
 target/
 
 ### JetBrains+all ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
@@ -616,6 +649,9 @@ target/
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
 # .idea/modules.xml
 # .idea/*.iml
 # .idea/modules
@@ -704,6 +740,7 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
 
@@ -732,7 +769,7 @@ Backup of *.doc*
 *.bak
 
 ### PyCharm+all ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
@@ -747,6 +784,9 @@ Backup of *.doc*
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
 # .idea/modules.xml
 # .idea/*.iml
 # .idea/modules
@@ -797,8 +837,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -830,20 +868,39 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
+pytestdebug.log
 
 # Translations
 *.mo
 *.pot
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
 
 # Scrapy stuff:
 .scrapy
 
 # Sphinx documentation
 docs/_build/
+doc/_build/
 
 # PyBuilder
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
 
 # pyenv
 .python-version
@@ -855,11 +912,29 @@ docs/_build/
 #   install all needed dependencies.
 #Pipfile.lock
 
-# celery beat schedule file
+# poetry
+#poetry.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
 celerybeat-schedule
+celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
+
+# Environments
+# .env
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
 
 # Spyder project settings
 .spyderproject
@@ -867,11 +942,6 @@ celerybeat-schedule
 
 # Rope project settings
 .ropeproject
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
 
 # mkdocs documentation
 /site
@@ -883,6 +953,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# operating system-related files
+*.DS_Store #file properties cache/storage on macOS
+Thumbs.db #thumbnail cache on Windows
+
+# profiling data
+.prof
+
 
 ### SublimeText ###
 # Cache files for Sublime Text
@@ -919,16 +1000,29 @@ GitHub.sublime-settings
 ### SVN ###
 .svn/
 
+### VirtualEnv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-!.vscode/extensions.json
+*.code-workspace
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+.ionide
 
 ### Gradle ###
 .gradle
@@ -978,6 +1072,13 @@ gradle-app.setting
 /*/*/production
 *.swp
 
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+# google-services.json
+
 # Android Patch
 
 # External native build folder generated in Android Studio 2.2 and later
@@ -1004,6 +1105,7 @@ obj/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+.idea/jarRepositories.xml
 
 # OS-specific files
 .DS_Store
@@ -1014,6 +1116,7 @@ obj/
 
 # Legacy Eclipse project files
 .classpath
+.project
 .cproject
 .settings/
 
@@ -1063,6 +1166,8 @@ obj/
 
 # .NET Core
 
+# ASP.NET Scaffolding
+
 # StyleCop
 
 # Files built by Visual Studio
@@ -1081,13 +1186,13 @@ obj/
 
 # ReSharper is a .NET coding add-in
 
-# JustCode is a .NET coding add-in
-
 # TeamCity is a build add-in
 
 # DotCover is a Code Coverage Tool
 
 # AxoCover is a Code Coverage Tool
+
+# Coverlet is a free, cross platform Code Coverage Tool
 
 # Visual Studio code coverage results
 
@@ -1194,4 +1299,8 @@ obj/
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 
-# End of https://www.gitignore.io/api/c,git,c++,svn,java,linux,cmake,maven,gradle,csharp,python,android,windows,java-web,notepadpp,sublimetext,pycharm+all,visualstudio,jetbrains+all,androidstudio,microsoftoffice,visualstudiocode
+# Ionide (cross platform F# VS Code tools) working folder
+
+# Fody - auto-generated XML schema
+
+# End of https://www.toptal.com/developers/gitignore/api/c,svn,git,c++,java,maven,linux,cmake,python,csharp,gradle,windows,android,java-web,notepadpp,pycharm+all,sublimetext,visualstudio,androidstudio,jetbrains+all,microsoftoffice,visualstudiocode,cfwheels,virtualenv
